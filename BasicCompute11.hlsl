@@ -1,13 +1,3 @@
-//--------------------------------------------------------------------------------------
-// File: BasicCompute11.hlsl
-//
-// This file contains the Compute Shader to perform array A + array B
-// 
-// Copyright (c) Microsoft Corporation. All rights reserved.
-//--------------------------------------------------------------------------------------
-
-#ifdef USE_STRUCTURED_BUFFERS
-
 struct BufType
 {
 	matrix<float, 4, 4> f[10];
@@ -61,5 +51,3 @@ void CSMain( uint3 DTid : SV_DispatchThreadID )
 	BufferOut[DTid.x].f = f0 + f1;
 #endif // TEST_DOUBLE
 }
-
-#endif // USE_STRUCTURED_BUFFERS
